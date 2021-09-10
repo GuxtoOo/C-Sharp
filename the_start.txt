@@ -1,0 +1,189 @@
+Status de resposta HTTP
+-Respostas de informação(100-199)
+-Respostas de sucesso(200-299)
+-Redirecionamentos(300-399) 
+-Erros do cliente(400-499)
+-Erros do servidor(500-599)
+
+Códigos de Erro HTTP WebAPI
+*Gateway: Age como um condutor, com o objetivo de obter as informações requeridas previamente pelo usuário.*
+
+500- Internal Server Error
+O servidor encontrou uma situação na qual não sabe lidar.
+Using Microsoft.AspNetCore.Mvc;
+ObjectResult retornoManual = new(null)
+            {
+                StatusCode = StatusCodes.Status500InternalServerError
+            };
+
+
+501- Not Implemented
+Método da requisição não é suportado. Métodos suportados são GET e HEAD.
+StatusCode = StatusCodes.Status500InternalServerError
+
+502- Bad Gateway
+Servidor obteve uma resposta inválida ao trabalhar como um gateway a fim de obter uma resposta necessária para manipular uma requisição.
+
+503- Service Unavaible
+O servidor não está pronto para manipular uma requisção.
+Causas comuns: manutenção ou sobrecarregamento.
+
+504- Gateway Timeout
+Servidor atuando como um gateway e não obtém a resposta a tempo.
+
+505- HTTP Version Not Supported
+Versão HTTP utilizada não é suportada pelo servidor.
+
+506- Variant Also Negotiates
+Erro de configuração interna do servidor: a negociação transparente de conteudo resulta uma referência circular.
+
+507-Insuicient Storage
+Outro erro interno de configuração do servidor: o recurso variante escolhido está 
+configurado para entrar em negociação trasparente de conteúdo com ele mesmo, e portanto não é uma ponta válida.
+
+508- Loop Detected
+O servidor detectou looping infinito no processamento da requisição.
+
+510- Not Extended
+Exigem-se extenções posteriores à requisição para o servidor atendê-la.
+
+511- Network Authentication Required
+O cliente precisa se autenticar para ganhar acesso a rede.
+
+Princípios S.O.L.I.D
+
+-Single Responsibility Principle
+#Uma classe deve ter apenas um motivo para mudar;
+#Trata-se da coesão, que é definida pela afinidade funcional dos elementos em um módulo;
+#Referente ao relacionamentos entre os membros desse módulo;
+#A classe só deverá ser disignada a um único papel. 
+
+-Open/Closed Principle
+#Entidades de um software devem ser abertas para ampliação mas fechadas para modificação; 
+#O comportamento de uma classe pode ser ampliado ao utilizar-se de herança, interface e composição,
+ entretanto, não se pode a abertura da mesma para pequenas modificações.
+
+-Liskov Substitution Principle
+#Os subtipos devem ser substituíveis pelos seus tipos bases;
+#Não se pode utilizar da herança de forma descontrolada, em casos como se utiliza a herança em classes só por possuírem algo em comum;
+
+-Interface Segregation Principle
+#Inúmeras interfaces específicas são melhores do que uma geral;
+#Coesão de interfaces, construção de métodos enxutos, com poucos comportamentos;
+#Intarfaces com vários comportamentos devem ser evitadas por serem difíceis de manter e evoluir.
+
+-Dependency Inversion Pinciple
+#Depender de abstrações e não de classes concretas;
+#Módulos de alto nível não devem depender de de módulos de baixo nível;
+#As abstrações não devem depender de detalhes. Os detalhes devem depender das abstrações.
+
+HATEOAS
+-Espécie de guia para os usuários;
+-Ele cria links para que o usuário possa navegar pela aplicação.
+-Sendo assim, a API já monta o caminho sem a necessidade de se montar a URL.
+
+WEB API ASP NET Core / .NET 5
+WEB API: 
+-Conjunto de serviços expostos via web;
+-Os mesmos são utilizados como requisições HTTP e retornam uma resposta;
+-Exemplos de Web API são o FaceBook e o Twitter;
+-Algumas de suas vantagens são:
+	* Dar suporte completo para roteamento;
+	*Funcionar utilizando verbos HTTP padrão como GET, POST, PUT, DELETE, etc... e todas as operações do CRUD;
+	*Suporte a Model Binding e validação.
+
+ASP.NET Core:
+-Uma versão moderna e atual do ASP.NET;
+-Criado para que não ouvesse a preocupação com o código legado;
+-Totalmente modular, recursos podem ser adcionados via pacotes Nuget;
+
+*Nota: Uma API é um conjunto de rotinas e padrões estabelecidos e documentados por uma aplicação A,
+ para que outras aplicações possam utilizar as funcionalidades da mesma.*
+
+API Restful
+-Sistemas que utilizam os pricípios REST são RESTFUL.;
+	.REST: conjunto de príncipios de arquitetura;
+	.RESTFUL: capacidade de determinado sistema aplicar os princípios REST.
+
+Rest
+-Abstração da arquitetura da Web;
+-Princípios, regras e constrains;
+-Permite que aplicações se comuniquem.
+
+CRUD Usuarios
+CRUD Produtos
+
+Usuario
+Produto
+
+*Nota: DTO(Data Transfer Object)
+Ou Objeto de Transferência de Dados, é um padrão de projeto de software
+usado para transferir dados entre substemas de um software.*
+
+/*ObjectResult retorno = new(null)
+            {
+                StatusCode = StatusCodes.Status501NotImplemented;
+        
+            };*/
+
+            /*ObjectResult retorno2 = new(null)
+            {
+                StatusCode = StatusCodes.Status502BadGateway;
+            }*/
+
+
+*Metodo POST jeito antigo*
+ //string dadosPOST = "title=macoratti";
+            //dadosPOST = dadosPOST + "&body=teste de envio de post";
+            //dadosPOST = dadosPOST + "&userId=1";
+
+            //var dados = System.Text.Encoding.UTF8.GetBytes(dadosPOST);
+            //var requisicaoWeb = System.Net.WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts");
+
+            //requisicaoWeb.Method = "POST";
+            //requisicaoWeb.ContentType = "application/x-www-form-urlencoded";
+            //requisicaoWeb.ContentLength = dados.Length;
+            //requisicaoWeb.UserAgent = "RequisicaoWebDemo";
+
+            ////Escrevendo os dados post para o stream
+
+            //using (var stream = requisicaoWeb.GetRequestStream())
+            //{
+            //    stream.Write(dados, 0, dados.Length);
+            //    stream.Close();
+            //}
+
+            ////Leitura e exibição da resposta
+
+            //using (var resposta = requisicaoWeb.GetResponse())
+            //{
+            //    var streamDados = resposta.GetResponseStream();
+            //    StreamReader reader = new StreamReader(streamDados);
+            //    Object objResponse = reader.ReadToEnd();
+            //    //HttpPostAttribute esta correto?
+            //    var post = JsonConvert.DeserializeObject<HttpPostAttribute>(objResponse.ToString());
+            //    //Pesquisando o erro da linha 51/52
+            //    Console.WriteLine(post.TypeId + " " + post.title + " " + post.body);
+            //    streamDados.Close();
+            //    resposta.Close();
+            //}
+
+Método POST jeito atual
+ [HttpPost]
+        public async Task<IActionResult> PostAsync()
+        {
+            var uri = "http://jsonplaceholder.typicode.com/posts";
+
+            var body = new
+            {
+                title = "macoratti",
+                body = "teste de envio de post",
+                userId = 1
+            };
+
+            HttpClient httpClient = new();
+            var request = await httpClient.PostAsJsonAsync(uri, body);
+            request.EnsureSuccessStatusCode();
+
+            var response = await request.Content.ReadAsStringAsync();
+	    return Ok();
