@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MinhaApi</name>
+    </assembly>
+    <members>
+        <member name="M:MinhaApi.Controllers.ProductsController.PostAsync(MinhaApi.Models.ProductDto)">
+            <summary>
+            Adicionar novo produto
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.ProductsController.GetAsync">
+            <summary>
+            Obter todos os produto
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.ProductsController.GetAsync(System.Int64)">
+            <summary>
+            Detalhar produto específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.ProductsController.PutAsync(System.Int64)">
+            <summary>
+            Alterar produto específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.ProductsController.DeleteAsync(System.Int64)">
+            <summary>
+            Deletar produto específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersController.PostAsync(MinhaApi.Models.UsuarioDto)">
+            <summary>
+            Adicionar novo usuário
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersController.GetAsync">
+            <summary>
+            Obter todos os usuários
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersController.GetAsync(System.Int64)">
+            <summary>
+            Detalhar usuário específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersController.PutAsync(System.Int64)">
+            <summary>
+            Alterar usuário específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersController.DeleteAsync(System.Int64)">
+            <summary>
+            Deletar usuário específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersProductsController.PostAsync">
+            <summary>
+            Adicionar novo produto associado ao usuário
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersProductsController.GetAsync">
+            <summary>
+            Obter todos os produto associado ao usuário
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersProductsController.PutAsync(System.Int64)">
+            <summary>
+            Alterar produto associado de um usuário específico
+            </summary>
+        </member>
+        <member name="M:MinhaApi.Controllers.UsersProductsController.DeleteAsync(System.Int64)">
+            <summary>
+            Deletar produto associado de a usuário
+            </summary>
+        </member>
+    </members>
+</doc>
