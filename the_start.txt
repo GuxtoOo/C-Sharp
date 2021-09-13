@@ -194,7 +194,7 @@ ddd domain draven design em api .net 5
 ddd simples em api c#
 https://fullcycle.com.br/domain-driven-design/
 
-O que é DDD(Domain Driven Design)
+O que é DDD(Domain Driven Design) (https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackernoon.com%2Fclean-domain-driven-design-in-10-minutes-6037a59c8b7b&psig=AOvVaw275rNNgQwO99wg71sMk8yb&ust=1631625693372000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCNiW096E_PICFQAAAAAdAAAAABAO)
 -Uma forma de organização em desenvolvimento de softwares complexos. Ele inclue a utilização de boas práticas na estrutura e na linguagem
 (nomes de classe, métodos, variáveis, etc.)
 -O DDD não pode ser encarado como arquitetura, tecnologia, framework ou linguagem, mas sim como uma prescrição de metodologia.
@@ -225,7 +225,10 @@ como o Entity Framework, o LINQ to SQL ou o NHibernate. A ideia básica é que o
 -B.F.F (Back for Front): é um padrão de arquitetura onde se customiza a entrega do back-end para cada interface, melhorando assim o desmpenho de
 aplicações até mesmo das mais complexas.
 
+-SeedWork: pasta que contem um pequeno sub-conjunto de classes reutilizavéis.
+
 -Objetos mock: objetos que simulam o comportamento de objetos reais em ambientes controlados.
 
-
+I.O.C (Inversion of Control): é um pattern que prega a utilização do controle de instancias de uma determinada classe para ser tratada externamente,
+e não dentro da mesma.
 
