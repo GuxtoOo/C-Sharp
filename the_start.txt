@@ -5,6 +5,8 @@ Status de resposta HTTP
 -Erros do cliente(400-499)
 -Erros do servidor(500-599)
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 Códigos de Erro HTTP WebAPI
 *Gateway: Age como um condutor, com o objetivo de obter as informações requeridas previamente pelo usuário.*
 
@@ -50,6 +52,8 @@ Exigem-se extenções posteriores à requisição para o servidor atendê-la.
 511- Network Authentication Required
 O cliente precisa se autenticar para ganhar acesso a rede.
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 Princípios S.O.L.I.D
 
 -Single Responsibility Principle
@@ -76,6 +80,8 @@ Princípios S.O.L.I.D
 #Depender de abstrações e não de classes concretas;
 #Módulos de alto nível não devem depender de de módulos de baixo nível;
 #As abstrações não devem depender de detalhes. Os detalhes devem depender das abstrações.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 HATEOAS
 -Espécie de guia para os usuários;
@@ -119,6 +125,8 @@ Produto
 *Nota: DTO(Data Transfer Object)
 Ou Objeto de Transferência de Dados, é um padrão de projeto de software
 usado para transferir dados entre substemas de um software.*
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 /*ObjectResult retorno = new(null)
             {
@@ -187,6 +195,8 @@ Método POST jeito atual
 
             var response = await request.Content.ReadAsStringAsync();
 	    return Ok();
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 		-Novos assuntos-
 ddd domain draven design em api .net 5
@@ -295,4 +305,6 @@ AlunoViewItem _alunoViewItem = Mapper.Map<Aluno , Aluno>(aluno);
 
 Mapper.CreateMap<Aluno, AlunoViewItem>().ForMember(dest => dest.Endereco, m => m.MapFrom(a => a.Endereco.Cidade + ", " + a.Endereco.Rua));
 
+*!Criar repositorios para usuarios, produtos e produtos de usuarios
+Criar service!*
 
