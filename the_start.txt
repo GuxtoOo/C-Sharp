@@ -221,6 +221,7 @@ Além disso, também há diferenças para casos em que utilizamos ferramentas de
 como o Entity Framework, o LINQ to SQL ou o NHibernate. A ideia básica é que o repositório precisa estar adaptado à essa estrutura.
 
 -Enum: usado para enumerar um conjunto de constantes.
+Exemplo da utilização de enum:
 public enum EPaymentType
     {
         Approved = 669,
@@ -228,6 +229,9 @@ public enum EPaymentType
         Cancel
     }
 var teste = EPaymentType.Approved;
+
+Utilização em uma API real: 
+é enorme, acho que não posso copiar e colar para fins didáticos mas ficará na memória. 
 -------------------------------------------------------------------------------------------------------------------------------------------- 
 
 -B.F.F (Back for Front): é um padrão de arquitetura onde se customiza a entrega do back-end para cada interface, melhorando assim o desmpenho de
@@ -239,4 +243,56 @@ aplicações até mesmo das mais complexas.
 
 I.O.C (Inversion of Control): é um pattern que prega a utilização do controle de instancias de uma determinada classe para ser tratada externamente,
 e não dentro da mesma.
+
+AutoMapper: é uma biblioteca que auxilia no mapeamento de um objeto para outro.
+Exemplo sem AutoMapper: 
+//Criando as classes
+public class Aluno{
+	public string Nome{get; set;}
+	public string Email{get; set}
+	public Endereco Endereco{get; set;}
+	public string Genero{get; set;}
+	public int Idade{get; set;}
+	public DateTime Nascimento{get; set;}
+}
+
+public class Endereco{
+	public string Pais{get; set;}
+	public string Cidade{get; set;}
+	public string Rua{get; set;}
+	public string Cep{get; set;}
+}
+
+public class AlunoViewItem{
+	public string Nome{get; set;}
+	public string Email{get; set;}
+	public string Endereco{get; set;}
+	public string Genero{get; set;}
+	public int Idade{get; set;}
+	public string Nascimento{get; set;}
+}
+
+//Mapeando as propriedades das classes Aluno e Endereco para a classe AlunoViewItem
+
+AlunoViewItem viewItem = new AlunoViewItem();
+viewItem.Nome = aluno.nome;
+viewItem.Email = aluno.Email;
+viewItem.Endereco = aluno.Endereco.Cidade + aluno.Endereco.Rua;
+viewItem.Genero = aluno.Genero == true ? "Masculino" : "Feminino"
+viewItem.Idade = aluno.Idade;
+viewItem.Nascimento = aluno.Nascimento.ToShortDateString();
+
+Agora um exemplo de mapeamento com o AutoMapper:
+//Indicando ao Auto Mapper qual classes serão mapeadas
+
+Mapper.CreateMap<Aluno, AlunoViewItem>();
+
+//Caso não houvesse inconsistencias na classe AlunoViewItem, o mapeamento seria assim
+
+AlunoViewItem _alunoViewItem = Mapper.Map<Aluno , Aluno>(aluno);
+
+//Logo, por conta de endereco e nascimento terá de ser feitas algumas alterações no método CreateMap
+
+Mapper.CreateMap<Aluno, AlunoViewItem>().ForMember(dest => dest.Endereco, m => m.MapFrom(a => a.Endereco.Cidade + ", " + a.Endereco.Rua));
+
 
