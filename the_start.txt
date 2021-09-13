@@ -220,7 +220,15 @@ Importante: Entretanto, a forma como os repositórios de dados será implementad
 Além disso, também há diferenças para casos em que utilizamos ferramentas de ORM (Object-Relational Mapping – Mapeamento Objeto-Relacional), 
 como o Entity Framework, o LINQ to SQL ou o NHibernate. A ideia básica é que o repositório precisa estar adaptado à essa estrutura.
 
--Enum: usado para enumerar um conjunto de constantes. 
+-Enum: usado para enumerar um conjunto de constantes.
+public enum EPaymentType
+    {
+        Approved = 669,
+        Denied = 555,
+        Cancel
+    }
+var teste = EPaymentType.Approved;
+-------------------------------------------------------------------------------------------------------------------------------------------- 
 
 -B.F.F (Back for Front): é um padrão de arquitetura onde se customiza a entrega do back-end para cada interface, melhorando assim o desmpenho de
 aplicações até mesmo das mais complexas.
