@@ -187,3 +187,45 @@ Método POST jeito atual
 
             var response = await request.Content.ReadAsStringAsync();
 	    return Ok();
+
+		-Novos assuntos-
+ddd domain draven design em api .net 5
+
+ddd simples em api c#
+https://fullcycle.com.br/domain-driven-design/
+
+O que é DDD(Domain Driven Design)
+-Uma forma de organização em desenvolvimento de softwares complexos. Ele inclue a utilização de boas práticas na estrutura e na linguagem
+(nomes de classe, métodos, variáveis, etc.)
+-O DDD não pode ser encarado como arquitetura, tecnologia, framework ou linguagem, mas sim como uma prescrição de metodologia.
+-A sua ideia básica é pensar para qual problema o software foi proposto.
+
+O que é domínio? 
+-A razão pela qual o software existe, uma espécie de ponto de partida.
+-Ele é baseado em um conjunto de ideias, conhecimentos e processos de negócio.
+
+Separação da aplicação em camadas
+-Modelo de domínio (Domain model): a base do DDD, é onde precisa ser definido o modelo de negócios em termos de classes, caso contrário,
+teriamos problemas futuros no projeto. As suas classes são chamadas de entidades, que por sua vez possuem relacionamento com outras entidades.
+ Uma variação dele é o Anemic Domain Model, que significa que é preciso de classes de serviço responsáveis por definir os comportamentos 
+as classes de domínio.
+
+-Serviços de domínio (Domain service): fornecem métodos necessários à aplicação, entretanto não estão restritos à uma só entidade. 
+O mesmo contém regras e comportamentos referentes ao Modelo de Domínio.
+
+-Repositório de dados (Data Repository): São baseados em um modelo, que é o Repository. A ideia é que o Modelo de Domínio estejade qualquer
+ definição de infraestrutura de dados.
+
+Importante: Entretanto, a forma como os repositórios de dados será implementada é muito dependente do banco de dados que estamos utilizando.
+Além disso, também há diferenças para casos em que utilizamos ferramentas de ORM (Object-Relational Mapping – Mapeamento Objeto-Relacional), 
+como o Entity Framework, o LINQ to SQL ou o NHibernate. A ideia básica é que o repositório precisa estar adaptado à essa estrutura.
+
+-Enum: usado para enumerar um conjunto de constantes. 
+
+-B.F.F (Back for Front): é um padrão de arquitetura onde se customiza a entrega do back-end para cada interface, melhorando assim o desmpenho de
+aplicações até mesmo das mais complexas.
+
+-Objetos mock: objetos que simulam o comportamento de objetos reais em ambientes controlados.
+
+
+
