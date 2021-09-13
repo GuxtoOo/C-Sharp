@@ -1,0 +1,104 @@
+*Exemplo de DTOs, já utilizando o banco de dados*
+
+namespace BookService.Models
+{
+    public class BookDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string AuthorName { get; set; }
+    }
+}
+
+namespace BookService.Models
+{
+    public class BookDetailDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int Year { get; set; }
+        public decimal Price { get; set; }
+        public string AuthorName { get; set; }
+        public string Genre { get; set; }
+    }
+}
+
+-----------------------------------------------------------------
+
+*Abaixo está uma instrução LINQ Select(no caso, estas informações já são do banco )*
+
+
+// GET api/Books
+public IQueryable<BookDto> GetBooks()
+{
+    var books = from b in db.Books
+                select new BookDto()
+                {
+                    Id = b.Id,
+                    Title = b.Title,
+                    AuthorName = b.Author.Name
+                };
+
+    return books;
+}
+
+// GET api/Books/5
+[ResponseType(typeof(BookDetailDto))]
+public async Task<IHttpActionResult> GetBook(int id)
+{
+    var book = await db.Books.Include(b => b.Author).Select(b =>
+        new BookDetailDto()
+        {
+            Id = b.Id,
+            Title = b.Title,
+            Year = b.Year,
+            Price = b.Price,
+            AuthorName = b.Author.Name,
+            Genre = b.Genre
+        }).SingleOrDefaultAsync(b => b.Id == id);
+    if (book == null)
+    {
+        return NotFound();
+    }
+
+    return Ok(book);
+}
+
+-----------------------------------------------------------------
+
+*Abaixo está a instrução SQL gerada pelo método GetBooks*
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[Books] AS [Extent1]
+    INNER JOIN [dbo].[Authors] AS [Extent2] ON [Extent1].[AuthorId] = [Extent2].[Id]
+
+-----------------------------------------------------------------
+
+*Abaixo está um método PostBook, modificado para retornar um DTO*
+
+[ResponseType(typeof(BookDto))]
+public async Task<IHttpActionResult> PostBook(Book book)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
+
+    db.Books.Add(book);
+    await db.SaveChangesAsync();
+
+    // New code:
+    // Load author name
+    db.Entry(book).Reference(x => x.Author).Load();
+
+    var dto = new BookDto()
+    {
+        Id = book.Id,
+        Title = book.Title,
+        AuthorName = book.Author.Name
+    };
+
+    return CreatedAtRoute("DefaultApi", new { id = book.Id }, dto);
+}
