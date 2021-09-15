@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MinhaApi.Infrastructure/1.0.0": {
+        "dependencies": {
+          "MinhaApi.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MinhaApi.Infrastructure.dll": {}
+        }
+      },
+      "MinhaApi.Domain/1.0.0": {
+        "runtime": {
+          "MinhaApi.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MinhaApi.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MinhaApi.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
