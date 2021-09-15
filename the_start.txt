@@ -317,3 +317,13 @@ Transient objects are always different; a new instance is provided to every cont
 Scoped objects are the same within a request, but different across different requests.
 
 Singleton objects are the same for every object and every request.
+
+Ver sobre AddTransient, AddScoped e AddSingleton.
+Ver sobre "injetar" no c#.
+Ver sobre Entity FrameWork.
+
+Entity FrameWork
+Abordagem DataBase First:
+-Ele cria uma representação visual de um modelo de dados EDM(Entity Data Model) formado por códigos xml.
+-A ideia é que ele leia o banco de dados e faça uma engenharia reversa, carregando quais classes que vão representar as tabelas do banco.
+
