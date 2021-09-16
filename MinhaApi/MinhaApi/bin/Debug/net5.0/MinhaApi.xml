@@ -44,7 +44,7 @@
             Detalhar usuário específico
             </summary>
         </member>
-        <member name="M:MinhaApi.Controllers.UsersController.PutAsync(System.Int64)">
+        <member name="M:MinhaApi.Controllers.UsersController.PutAsync(System.Int64,MinhaApi.Models.UsuarioDto)">
             <summary>
             Alterar usuário específico
             </summary>
