@@ -327,3 +327,42 @@ Abordagem DataBase First:
 -Ele cria uma representação visual de um modelo de dados EDM(Entity Data Model) formado por códigos xml.
 -A ideia é que ele leia o banco de dados e faça uma engenharia reversa, carregando quais classes que vão representar as tabelas do banco.
 
+System.AggregateException: 'Some services are not able to be constructed 
+(Error while validating the service descriptor 'ServiceType: MinhaApi.Repository.IUsersRepository 
+Lifetime: Scoped ImplementationType: MinhaApi.Repository.UsersRepository': 
+A circular dependency was detected for the service of type 'MinhaApi.Repository.IUsersRepository'.
+MinhaApi.Repository.IUsersRepository(MinhaApi.Repository.UsersRepository) -> MinhaApi.Repository.IUsersRepository) 
+(Error while validating the service descriptor 'ServiceType: MinhaApi.Domain.Services.IUsersService Lifetime: 
+Scoped ImplementationType: MinhaApi.Infrastructure.Services.UsersService': 
+A circular dependency was detected for the service of type 'MinhaApi.Repository.IUsersRepository'.
+MinhaApi.Domain.Services.IUsersService(MinhaApi.Infrastructure.Services.UsersService) 
+-> MinhaApi.Repository.IUsersRepository(MinhaApi.Repository.UsersRepository) -> MinhaApi.Repository.IUsersRepository)'
+
+2 de 2 Execeções Internas 
+InvalidOperationException: A circular dependency was detected for the service of type 'MinhaApi.Repository.IUsersRepository'.
+MinhaApi.Repository.IUsersRepository(MinhaApi.Repository.UsersRepository) -> MinhaApi.Repository.IUsersRepository
+
+*Lembrar*
+throw new NotImplementedException();
+
+public async Task UpdateAsync(dynamic user)
+        {
+            throw new NotImplementedException();
+        }
+public async dynamic GetUsersById(int userId)
+        {
+            throw new NotImplementedException();
+            return userId;
+        }
+public async Task DeleteAsync(int userId)
+        {
+            throw new NotImplementedException();
+        }
+public async IAsyncEnumerable<dynamic> GetUsers()
+        {
+            throw new NotImplementedException();
+
+        }    
+Assunto: dbset 
+
+
