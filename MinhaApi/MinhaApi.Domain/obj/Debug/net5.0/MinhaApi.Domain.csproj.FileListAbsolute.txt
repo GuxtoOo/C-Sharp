@@ -2,7 +2,6 @@ C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\bin\Debug\net5.0\MinhaApi
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\bin\Debug\net5.0\MinhaApi.Domain.dll
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\bin\Debug\net5.0\ref\MinhaApi.Domain.dll
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\bin\Debug\net5.0\MinhaApi.Domain.pdb
-C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.csproj.AssemblyReference.cache
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.AssemblyInfoInputs.cache
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.dll
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\ref\MinhaApi.Domain.dll
 C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.pdb
+C:\Users\augusto\source\repos\MinhaApi\MinhaApi.Domain\obj\Debug\net5.0\MinhaApi.Domain.csproj.AssemblyReference.cache
