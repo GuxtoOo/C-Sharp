@@ -364,5 +364,8 @@ public async IAsyncEnumerable<dynamic> GetUsers()
 
         }    
 Assunto: dbset 
-
+Customer customer = new Customer() { Id = userId };
+            context.Customers.Attach(customer);
+            context.Customers.Remove(customer);
+            context.SaveChanges();
 
