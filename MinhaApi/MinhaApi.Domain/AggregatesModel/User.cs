@@ -14,10 +14,20 @@ namespace MinhaApi.Domain.AggregatesModel
 
         protected User() { }
 
+        public User(long userId)
+        {
+            Id = userId;
+        }
+
         public User(string name, string document)
         {
             Name = name;
             Document = document;
+        }
+
+        public void SetName(string name)
+        {
+            Name = name;
         }
     }
 }
