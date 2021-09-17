@@ -369,3 +369,5 @@ Customer customer = new Customer() { Id = userId };
             context.Customers.Remove(customer);
             context.SaveChanges();
 
+Forma de resolver excessão de tratamento dele retornar um statusCode 204: 
+https://stackoverflow.com/questions/25894587/how-to-update-record-using-entity-framework-6
