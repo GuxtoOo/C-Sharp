@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 using MinhaApi.Models;
-using MinhaApi.Repository;
 using MinhaApi.Domain.Services;
 
 namespace MinhaApi.Controllers
@@ -58,6 +55,11 @@ namespace MinhaApi.Controllers
         {
             var query = await _usersService.GetByIdAsync(id);
 
+            if(query == null)
+            {
+                return NotFound();
+            }
+
             return Ok(query);
         }
 
@@ -65,7 +67,7 @@ namespace MinhaApi.Controllers
         /// Alterar usuário específico
         /// </summary>
         [HttpPut]
-        [Route("{Id}")]
+        [Route("{id}")]
         public async Task<IActionResult> PutAsync(long id, [FromBody] UsuarioDto usuario)
         {
             if (string.IsNullOrEmpty(usuario.Name))
@@ -86,7 +88,7 @@ namespace MinhaApi.Controllers
         /// Deletar usuário específico
         /// </summary>
         [HttpDelete]
-        [Route("{Id}")]
+        [Route("{id}")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             await _usersService.DeleteAsync(id);
