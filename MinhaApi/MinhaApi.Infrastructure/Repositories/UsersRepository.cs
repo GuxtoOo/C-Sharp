@@ -33,9 +33,11 @@ namespace MinhaApi.Repository
             await _apiDbContext.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<dynamic>> GetAsync()
+        public async Task<IEnumerable<dynamic>> GetAsync()
         {
-            throw new NotImplementedException();
+            //Lembrar de fazer a implementação            
+            var query = await _apiDbContext.Users.ToListAsync();
+            return query;
         }
 
         public async Task<User> GetByIdAsync(long userId)
@@ -50,7 +52,8 @@ namespace MinhaApi.Repository
         {
             var user = await GetByIdAsync(userId);
 
-            user.SetName("teste");
+            //user.SetName("Guxto");
+            user.SetDocument("88884444");
 
             _apiDbContext.SaveChanges();
         }
