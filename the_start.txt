@@ -374,3 +374,5 @@ https://stackoverflow.com/questions/25894587/how-to-update-record-using-entity-f
 
 Injeções de dependência:
 https://www.luisdev.com.br/2021/09/16/injecao-de-dependencia-com-net-5/
+
+https://docs.microsoft.com/pt-br/aspnet/core/data/ef-mvc/migrations?view=aspnetcore-5.0
